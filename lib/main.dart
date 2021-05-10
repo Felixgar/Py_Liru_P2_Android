@@ -44,10 +44,10 @@ class Productos extends StatelessWidget {
     return new Scaffold(
       appBar: AppBar(
         title: new Text('PRODUCTOS de Lirucisa'),
-      ), //findeappbar
+      ), //fin de appbar
       body: Center(
         child: Text("Seccion Productos"),
-      ), //finbody
+      ), //fin body
     ); //fin de scaffold
   } //fin widget context
 } //fin de la clase productos
@@ -61,7 +61,7 @@ class Contactos extends StatelessWidget {
       ), //findeappbar
       body: Center(
         child: Text("Seccion Contactos"),
-      ), //finbody
+      ), //fin de body
     ); //fin de scaffold
   } //fin widget context
 } //fin de la clase contactos
@@ -100,11 +100,11 @@ class Inicio extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: TextStyle(color: Colors.blue, fontWeight: FontWeight.w900),
                           ), //fin del center
-                        ), //fin center
-                      ), //fin sizedbox de inicio
-                    ), //boton inicio
-                  ) //fin padding
-                ], //fin widget niño
+                        ), //fin de center
+                      ), //fin de sizedbox de inicio
+                    ), //boton de inicio
+                  ) //fin de padding
+                ], //fin de widget niño
               ), //fin de column dentro de column interna 1
               Column(
                 children: <Widget>[
@@ -174,13 +174,13 @@ class Inicio extends StatelessWidget {
                         ),
                       ),
                     )
-                  ], //fin children del 2-2
-                ), //fin row2 columna 2
+                  ], //fin de children del 2-2
+                ), //fin de row2 columna 2
               ],
-            ), //fin row 2 fila 2
+            ), //fin de row 2 fila 2
           ], //cierre de children widget 1
         ), //cierre de column en el child
       ), //fin del container
-    ); //fin scaffold
+    ); //fin de scaffold
   } //fin de el widget inicio
 } //fin de inicio
