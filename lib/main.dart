@@ -10,7 +10,7 @@ class LirucisaApp extends StatelessWidget {
         title: 'Mi Lirucisa',
         theme: ThemeData(
           //el fondo va dentro de el tema
-          primarySwatch: Colors.amber,
+          primarySwatch: Colors.red,
         ), //finthemedata
         //ruta de ventanas enganchar a los widgets
         routes: <String, WidgetBuilder>{
