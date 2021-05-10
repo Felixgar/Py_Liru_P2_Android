@@ -6,62 +6,65 @@ class LirucisaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Liru cisa',
+        debugShowCheckedModeBanner: false,
+        title: 'Mi Lirucisa',
         theme: ThemeData(
-          primarySwatch: Colors.red,
-        ),
-        //ruta ventanas
+          //el fondo va dentro de el tema
+          primarySwatch: Colors.amber,
+        ), //finthemedata
+        //ruta de ventanas enganchar a los widgets
         routes: <String, WidgetBuilder>{
           "/inicio": (BuildContext context) => Inicio(),
           "/empresa": (BuildContext context) => Empresa(),
           "/productos": (BuildContext context) => Productos(),
-          "/contacto": (BuildContext context) => Contacto(),
-        }, //fin de rutas
-        home: Inicio()); //fin de material
-  }
-} //fin de Lirucisa
+          "/contacto": (BuildContext context) => Contactos(),
+        }, //fin routes- es el mapa de los botones de el menu
+
+        home: Inicio()); //cierre de material app
+  } //fin widget context
+} //fin LirucisaApp class
 
 class Empresa extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        title: new Text("Empresa"),
-      ),
+        title: new Text('EMPRESA Lirucisa'),
+      ), //findeappbar
       body: Center(
-        child: Text("Seccion de Empresa"),
-      ),
-    ); //fin del Scaffold
-  } //fin del widget(empresa)
-} //fin de empresa
+        child: Text("Seccion Empresa"),
+      ), //finbody
+    ); //fin de scaffold
+  } //fin widget context
+} //fin de la clase empresa
 
 class Productos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        title: new Text("Productos"),
-      ),
+        title: new Text('PRODUCTOS de Lirucisa'),
+      ), //findeappbar
       body: Center(
-        child: Text("Seccion de Productos"),
-      ),
-    ); //fin del Scaffold
-  } //fin del widget(productos)
-} //fin de productos
+        child: Text("Seccion Productos"),
+      ), //finbody
+    ); //fin de scaffold
+  } //fin widget context
+} //fin de la clase productos
 
-class Contacto extends StatelessWidget {
+class Contactos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        title: new Text("Contacto"),
-      ),
+        title: new Text('CONTACTOS Lirucisa'),
+      ), //findeappbar
       body: Center(
-        child: Text("Seccion de Contacto"),
-      ),
-    ); //fin del Scaffold
-  } //fin del widget(Contacto)
-} //fin de Contacto
+        child: Text("Seccion Contactos"),
+      ), //finbody
+    ); //fin de scaffold
+  } //fin widget context
+} //fin de la clase contactos
 
 class Inicio extends StatelessWidget {
   @override
@@ -69,8 +72,115 @@ class Inicio extends StatelessWidget {
     return new Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 130, bottom: 10, right: 10, left: 10),
-        decoration: BoxDecoration(color: Colors.blue, image: DecorationImage(image: NetworkImage("https://raw.githubusercontent.com/Felixgar/Mis_imagenes/main/MicrosoftTeams-image.png"), alignment: Alignment.topCenter)), //fin de la caja
+        decoration: BoxDecoration(color: Colors.cyan, image: DecorationImage(image: NetworkImage("https://raw.githubusercontent.com/vianeyalejandra03/mis_imagenes/main/Equipo-Clinica-Lirucisa-Ejea-1.png"), alignment: Alignment.topCenter) //fin de decoration image
+            ), //fin box decoration
+
+//hacemos la columna de el mapa
+        child: Column(
+          children: <Widget>[
+            //hacemos la primera fila de el mapa
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+              Column(
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: RaisedButton(
+                      color: Colors.white,
+                      shape: new RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+
+                      onPressed: () {
+                        Navigator.pushNamed(context, "/inicio");
+                      }, //onpressed
+                      child: SizedBox(
+                        width: 100,
+                        height: 100,
+                        child: Center(
+                          child: Text(
+                            "INICIO",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.indigo, fontWeight: FontWeight.w900),
+                          ), //fin del center
+                        ), //fin center
+                      ), //fin sizedbox de inicio
+                    ), //boton inicio
+                  ) //fin padding
+                ], //fin widget niño
+              ), //fin de column dentro de column interna 1
+              Column(
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: RaisedButton(
+                      color: Colors.white,
+                      shape: new RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                      onPressed: () {
+                        Navigator.pushNamed(context, "/empresa");
+                      },
+                      child: SizedBox(
+                        width: 100,
+                        height: 100,
+                        child: Center(
+                          child: Text("EMPRESA", textAlign: TextAlign.center),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ), //r1 columna 2
+            ] //segundo children fin 2 widget
+                ), //cierre de row- fila 1
+
+//inicio de la fila 2
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.all(10),
+                      child: RaisedButton(
+                        color: Colors.white,
+                        shape: new RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                        onPressed: () {
+                          Navigator.pushNamed(context, "/productos");
+                        },
+                        child: SizedBox(
+                          width: 100,
+                          height: 100,
+                          child: Center(
+                            child: Text("PRODUCTOS", textAlign: TextAlign.center),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ), // row 2 fin columna 1
+                Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.all(10),
+                      child: RaisedButton(
+                        color: Colors.white,
+                        shape: new RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                        onPressed: () {
+                          Navigator.pushNamed(context, "/contacto");
+                        },
+                        child: SizedBox(
+                          width: 100,
+                          height: 100,
+                          child: Center(
+                            child: Text("CONTACTO", textAlign: TextAlign.center),
+                          ),
+                        ),
+                      ),
+                    )
+                  ], //fin children del 2-2
+                ), //fin row2 columna 2
+              ],
+            ), //fin row 2 fila 2
+          ], //cierre de children widget 1
+        ), //cierre de column en el child
       ), //fin del container
-    ); //fin de Scaffold
-  } //fin de widget(inicio)
-} //fin de inici
+    ); //fin scaffold
+  } //fin de el widget inicio
+} //fin de inicio
